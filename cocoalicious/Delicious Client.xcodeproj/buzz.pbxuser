@@ -170,7 +170,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 220739364;
+			PBXPerProjectTemplateStateSaveDate = 220741629;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -1042,7 +1042,7 @@
 				PBXModuleWindowStatusBarHidden = YES;
 				RubberWindowFrame = "465 168 745 467 0 0 1280 832 ";
 			};
-			PBXWorkspaceStateSaveDate = 220739364;
+			PBXWorkspaceStateSaveDate = 220741629;
 		};
 		sourceControlManager = 6BF88AE705C4D57100D7EDBB /* Source Control */;
 		userBuildSettings = {
@@ -1542,7 +1542,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = CoreFoundation;
-		modificationTime = 220739368.280205;
+		modificationTime = 220741748.446082;
 		state = 1;
 		symbolName = "[NSException raise]";
 	};
@@ -1724,7 +1724,7 @@
 		ignoreCount = 0;
 		lineNumber = 334;
 		location = Cocoalicious;
-		modificationTime = 220739368.902391;
+		modificationTime = 220741748.774511;
 		state = 0;
 	};
 	6BF00A8F077B0D340036723E /* DCTypes.h */ = {
@@ -1747,9 +1747,9 @@
 	};
 	6BF88AE405C4D56000D7EDBB /* AppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1057, 25522}}";
-			sepNavSelRange = "{13006, 40}";
-			sepNavVisRange = "{12902, 253}";
+			sepNavIntBoundsRect = "{{0, 0}, {1466, 24920}}";
+			sepNavSelRange = "{12568, 0}";
+			sepNavVisRange = "{12322, 1270}";
 			sepNavVisRect = "{{0, 9182}, {1071, 75}}";
 			sepNavWindowFrame = "{{224, 113}, {1175, 713}}";
 		};
@@ -1759,6 +1759,7 @@
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 0;
 		scmConfiguration = {
+			repositoryName = Cocoalicious;
 		};
 		scmType = scm.cvs;
 	};
