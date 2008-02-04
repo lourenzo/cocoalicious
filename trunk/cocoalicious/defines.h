@@ -83,3 +83,7 @@
 
 #define kLAST_REFRESH_FILE_NAME @"last_refresh_time"
 #define kPOST_CACHE_FILE_NAME @"posts"
+
+#ifndef NSAppKitVersionNumber10_4
+#define NSAppKitVersionNumber10_4 824
+#endif
