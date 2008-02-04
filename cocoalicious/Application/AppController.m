@@ -133,8 +133,26 @@ static NSString *ERR_LOGIN_NO_CREDENTIALS_SPECIFIED = @"Username or password not
 	finishedLaunching = YES;
 }
 
-- (void) applicationDidFinishLaunching: (NSNotification *) aNotification {
+/*- (void) applicationDidFinishLaunching: (NSNotification *) aNotification {
 
+}*/
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification {
+       if (floor(NSAppKitVersionNumber) <= 824 /*NSAppKitVersionNumber10_4*/) {
+               NSDictionary *values = [[NSUserDefaultsController
+sharedUserDefaultsController] values];
+               BOOL autoLogin = [[values valueForKey: kAUTOLOGIN_DEFAULTS_KEY]
+boolValue];
+               if (autoLogin) {
+					NSString *apiURLString = [values valueForKey: kAPI_URL_DEFAULTS_KEY];
+					NSURL *apiURL = [NSURL URLWithString: apiURLString];
+					NSString *username = [values valueForKey: kUSERNAME_DEFAULTS_KEY];
+					NSString *password = [[self client] password];
+
+					[SFHFKeychainUtils addWebPassword: password forUser: username URL:
+apiURL domain: kDEFAULT_SECURITY_DOMAIN];
+               }
+       }
 }
 
 - (void) setupTaglist {
