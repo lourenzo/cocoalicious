@@ -8,6 +8,7 @@
 
 #import "SFHFTableView.h"
 
+NSString *SFHFReloadDataCompleteNotification = @"SFHFReloadDataComplete";
 
 @implementation SFHFTableView
 
@@ -252,6 +253,11 @@
 	}
 
 	[super mouseDown: theEvent];
+}
+
+- (void) reloadData {
+	[super reloadData];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"SFHFReloadDataComplete" object: self userInfo: nil];
 }
 
 - (void) dealloc {
