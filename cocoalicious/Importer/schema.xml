@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<schema version="1.0" xmlns="http://www.apple.com/metadata"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.apple.com/metadata file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
+	<note>
+		Custom attributes that this metadata importer supports.  Below
+		is an example of a multivalued string attribute.  Other types
+		are CFNumber, CFDate, CFBoolean and CFData.		      
+    </note>
+	<attributes>
+		<attribute name="com_scifihifi_cocoalicious_Private" type="CFBoolean"/>
+		<attribute name="com_scifihifi_cocoalicious_Tags" type="CFString" multivalued="true"/>
+	</attributes>
+
+	<types>
+		<type name="com.scifihifi.cocoalicious.cocoaliciouspost">
+			<note>
+				The keys that this metadata importer handles.
+			</note>
+			<allattrs>
+				kMDItemDescription
+				kMDItemURL
+				kMDItemKeywords
+				kMDItemContentCreationDate
+				kMDItemDisplayName
+				kMDItemKind
+				kMDItemHeadline
+				com_scifihifi_cocoalicious_Private
+				com_scifihifi_cocoalicious_Tags
+			</allattrs>
+			<displayattrs>
+				kMDItemDescription
+				kMDItemURL
+				kMDItemKeywords
+				com_scifihifi_cocoalicious_Private
+				kMDItemContentCreationDate
+			</displayattrs>
+		</type>
+	</types>
+</schema>
+
