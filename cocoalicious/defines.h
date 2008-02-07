@@ -84,6 +84,11 @@
 #define kLAST_REFRESH_FILE_NAME @"last_refresh_time"
 #define kPOST_CACHE_FILE_NAME @"posts"
 
+#pragma mark Spotlight Information
+#define kSPOTLIGHT_CACHE_PATH @"Metadata/com.scifihifi.Cocoalicious/"
+#define kSPOTLIGHT_CACHE_MAP @"spotlight_cache_map.plist"
+#define kSPOTLIGHT_STUB_EXTENSION @".cocoaliciouspost"
+
 #ifndef NSAppKitVersionNumber10_4
 #define NSAppKitVersionNumber10_4 824
 #endif

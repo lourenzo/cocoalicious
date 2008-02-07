@@ -36,4 +36,7 @@
 - (NSString *)tableView:(SFHFTableView *)tableView tooltipForItem:(id)item;
 - (id)tableView:(SFHFTableView *)tableView itemAtRow:(int)row;
 
+#pragma mark Notifications
+extern NSString *SFHFReloadDataCompleteNotification;
+
 @end

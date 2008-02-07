@@ -57,6 +57,11 @@ static NSString *ERR_LOGIN_NO_CREDENTIALS_SPECIFIED = @"Username or password not
 #endif
 
 		finishedLaunching = NO;
+
+		postSelectionPending = NO;
+		
+		postToSelectURL = [[NSString alloc] init];
+		postToSelectInfo = [[NSDictionary alloc] init];
 	}     
 	
 	return self;
@@ -70,6 +75,8 @@ static NSString *ERR_LOGIN_NO_CREDENTIALS_SPECIFIED = @"Username or password not
 	[self setupToolbar];
 	[self setupWebPreview];
 	[self setUpDockMenu];
+
+	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(checkForPostToSelect:) name: SFHFReloadDataCompleteNotification object: postList];
 }
 
 - (void) applicationWillFinishLaunching: (NSNotification *) notification {
@@ -138,7 +145,7 @@ static NSString *ERR_LOGIN_NO_CREDENTIALS_SPECIFIED = @"Username or password not
 }*/
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-       if (floor(NSAppKitVersionNumber) <= 824 /*NSAppKitVersionNumber10_4*/) {
+       if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
                NSDictionary *values = [[NSUserDefaultsController
 sharedUserDefaultsController] values];
                BOOL autoLogin = [[values valueForKey: kAUTOLOGIN_DEFAULTS_KEY]
@@ -296,6 +303,18 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 	}
 }
 
+- (void) setMetadataManager: (DCAPIPostMetadataManager *) newMetadataManager {
+	if (newMetadataManager != metadataManager) {
+		[newMetadataManager retain];
+		[metadataManager release];
+		metadataManager = newMetadataManager;
+	}
+}
+
+- (DCAPIPostMetadataManager *) metadataManager {
+	return [[metadataManager retain] autorelease];
+}
+
 - (IBAction) refresh: (id) sender {
     [NSThread detachNewThreadSelector: @selector(refreshAll) toTarget: self withObject: nil];
 }
@@ -313,6 +332,7 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 	
 	[self refreshPostsWithCachePolicy: policy];
 	[self refreshTags];
+	[[self metadataManager] refreshPostMetadata: [self postsArray]];
 	[spinnyThing stopAnimation: self];
 	
 	[pool release];
@@ -594,6 +614,33 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 
 - (NSMutableDictionary *) posts {
     return [[posts retain] autorelease];
+}
+
+- (NSString *) postToSelectURL {
+	return [[postToSelectURL retain] autorelease];
+	
+}
+
+- (NSDictionary *)postToSelectInfo {
+	return [[postToSelectInfo retain] autorelease];
+}
+
+- (void) setPostToSelectURL: (NSString *) newPostToSelectURL {
+	@synchronized(postToSelectURL) {
+		if (postToSelectURL != newPostToSelectURL) {
+			[postToSelectURL release];
+			postToSelectURL = [newPostToSelectURL retain];
+		}
+	}
+}
+
+- (void) setPostToSelectInfo: (NSDictionary *)newPostToSelectInfo {
+	@synchronized(postToSelectInfo) {
+		if(postToSelectInfo != newPostToSelectInfo) {
+			[postToSelectInfo release];
+			postToSelectInfo = [newPostToSelectInfo retain];
+		}
+	}
 }
 
 - (NSArray *) postsArray {
@@ -1330,6 +1377,9 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 		DCAPICache *dcCache = [DCAPICache DCAPICacheForUsername: username client: dcClient];
 		[self setCache: dcCache];
 		[dcClient release];
+		
+		DCAPIPostMetadataManager *dcMetadataManager = [DCAPIPostMetadataManager DCAPIPostMetadataManagerForUsername: username];
+		[self setMetadataManager: dcMetadataManager];
 	}
 		
 	[mainWindow makeKeyAndOrderFront: self];
@@ -1523,6 +1573,7 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 
 - (void) insertPost: (DCAPIPost *) newPost {
 	[[self cache] addPosts: [NSArray arrayWithObject: newPost] clean: NO];
+	[[self metadataManager] addPosts: [NSArray arrayWithObject: newPost] clean: NO];
 	[self refreshPostsWithCachePolicy: CocoaliciousCacheUseMemoryCache];
 	[self refreshTags];
 }
@@ -1566,6 +1617,85 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 	[[SFHFFaviconCache sharedFaviconCache] faviconForURL: [newPost URL] forceRefresh: YES];
 	[postList performSelectorOnMainThread: @selector(reloadData) withObject: nil waitUntilDone:NO];
 	[pool release];
+}
+
+- (void) checkForPostToSelect: (NSNotification *)notification {
+	if(postSelectionPending) {
+		[self selectPost: [self postToSelectURL] withInfo: [self postToSelectInfo]];
+	}
+}
+
+- (BOOL) selectPost: (NSString *)postURL withInfo: (NSDictionary *)postInfo {
+	BOOL success = NO;
+	postSelectionPending = NO;
+	
+	DCAPIPost * post = [DCAPIPost postWithDictionary: postInfo URL:[NSURL URLWithString: postURL]];
+	
+	// Always clear the search field when opening a post
+	if (![[searchField stringValue] isEqualToString:[NSString string]]) {
+		[self setCurrentSearch: nil];
+		[searchField setStringValue: [NSString string]];
+		[self resetPostView];
+		[self refreshPostsWithCachePolicy: CocoaliciousCacheUseMemoryCache];
+	}
+	
+	// Check to see if the desired post is in the current view
+	unsigned int index = [[self filteredPosts] indexOfObject: post];
+
+	// Don't use [self numberOfRowsInTableView: because it could be wrong if the table hasn't finished refreshing -
+	// an edge case, but one that can be seen if you try to open multiple .cocoalicious post files at once
+	if(index != NSNotFound && index < [postList numberOfRows]) {
+		[postList selectRowIndexes: [NSIndexSet indexSetWithIndex: index] byExtendingSelection: NO];
+		[postList scrollRowToVisible: index];
+		[[NSApp mainWindow] makeFirstResponder: postList];
+		success = YES;
+	}
+	
+	// If post is not in current view and we've got posts from the server
+	if(success == NO) {
+		NSLog(@"Post not in current post list - clearing selected tags");
+		index = [[[self posts] allValues] indexOfObject: post];
+		if(index != NSNotFound || [[self posts] count] == 0) {
+			// Probably need to be changed when the tag browser is implemented
+			[tagList selectRowIndexes: [NSIndexSet indexSetWithIndex: 0] byExtendingSelection: NO];
+			[tagList scrollRowToVisible: 0];
+			
+			postSelectionPending = YES;
+			[self setPostToSelectURL: postURL];
+			[self setPostToSelectInfo: postInfo];
+			
+			success = YES;
+		}
+	}
+	
+	// Post is not in either current post view or total post view - add as a new post
+	if(success == NO) {
+		NSString * description = [post description];
+		if(description) {
+			[currentPostProperties setObject: description forKey: @"description"];
+		}
+		
+		NSString * extended = [post extended];
+		if(extended) {
+			[currentPostProperties setObject: extended forKey: @"extended"];
+		}
+		
+		NSString * tagString = [post tagsAsString];
+		if(tagString) {
+			[currentPostProperties setObject: tagString forKey: @"tags"];
+		}
+		
+		NSString * URLString = [post URLString];
+		if(URLString) {
+			[currentPostProperties setObject: URLString forKey: @"url"];
+		}
+		
+		[self showPostingInterface: self];
+		
+		success = YES;
+	}
+	
+	return success;
 }
 
 - (void)postNewLinkWithPasteboard:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error {
@@ -1695,6 +1825,7 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 		DCAPIPost *selectedPost = [[self filteredPosts] objectAtIndex: selectedRow];
 		[NSThread detachNewThreadSelector: @selector(deletePostWithURL:) toTarget: [self client] withObject: [selectedPost URL]];
 		[[self cache] removePosts: [NSArray arrayWithObject: selectedPost]];
+		[[self metadataManager] removePosts: [NSArray arrayWithObject: selectedPost]];
 		[self refreshPostsWithCachePolicy: CocoaliciousCacheUseMemoryCache];
 		[self refreshTags];
 		[self resetPostView];
@@ -1730,8 +1861,22 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
     }
 }
 
-- (BOOL) application: (NSApplication *) theApplication openFile: (NSString *) filename {
-	return NO;
+- (BOOL) application: (NSApplication *) theApplication openFile: (NSString *) filepath {
+	BOOL success = NO;
+	NSDictionary * masterDict = [[NSDictionary alloc] initWithContentsOfFile: filepath];
+	
+	if(masterDict) {
+		NSArray * keys = [masterDict allKeys];
+		if([keys count] > 0) {
+			// Each stub file should only contain a single post's information
+			NSString * url = [keys objectAtIndex: 0];
+			NSDictionary * postDict = [masterDict objectForKey: url];
+			
+			success = [self selectPost: url withInfo: postDict];
+		}
+		[masterDict release];
+	}
+	return success;	
 }
 
 - (BOOL) validateMenuItem: (NSMenuItem *) anItem { 
@@ -1833,6 +1978,8 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 }
 
 - (void) dealloc {
+	[[NSNotificationCenter defaultCenter] removeObject: self];
+
     [client release];
     [tags release];
     [posts release];
@@ -1846,6 +1993,7 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 #endif
 	[safariScript release];
 	[dockMenu release];
+	
     [super dealloc];
 }
 

@@ -98,12 +98,20 @@
 		6B6AA444084A7B0F00FDB683 /* SFHFCircularCounterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6AA442084A7B0F00FDB683 /* SFHFCircularCounterCell.m */; };
 		6B6B69E0082B3C97003DFA07 /* NSDictionary+SFHFUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B6B69DE082B3C97003DFA07 /* NSDictionary+SFHFUtils.h */; };
 		6B6B69E1082B3C97003DFA07 /* NSDictionary+SFHFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6B69DF082B3C97003DFA07 /* NSDictionary+SFHFUtils.m */; };
+		6B9D0C920D57BAB50056FC4A /* DCAPIPostMetadataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B9D0C900D57BAB50056FC4A /* DCAPIPostMetadataManager.h */; };
+		6B9D0C930D57BAB50056FC4A /* DCAPIPostMetadataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D0C910D57BAB50056FC4A /* DCAPIPostMetadataManager.m */; };
+		6B9D0E580D57CEE10056FC4A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D0CCC0D57BC660056FC4A /* main.c */; };
+		6B9D0E5B0D57CF0D0056FC4A /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D0CCA0D57BC5E0056FC4A /* GetMetadataForFile.m */; };
 		6BA936C40655EEC400AE7890 /* NSString+SFHFUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA936C20655EEC400AE7890 /* NSString+SFHFUtils.h */; };
 		6BA936C50655EEC400AE7890 /* NSString+SFHFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA936C30655EEC400AE7890 /* NSString+SFHFUtils.m */; };
 		6BA939AE065692DC00AE7890 /* metal_column_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA939AD065692DC00AE7890 /* metal_column_header.png */; };
 		6BB0A8E9074FF64B008FDDCC /* refresh_icon.tif in Resources */ = {isa = PBXBuildFile; fileRef = 6BB0A8E8074FF64B008FDDCC /* refresh_icon.tif */; };
 		6BB2CB310D26EFF100D654F0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB2CB300D26EFF000D654F0 /* Sparkle.framework */; };
 		6BB2CB4D0D26F01000D654F0 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BB2CB300D26EFF000D654F0 /* Sparkle.framework */; };
+		6BCBB88B0D57D1A7003C1E5B /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D0CCE0D57BC810056FC4A /* schema.xml */; };
+		6BCBBC330D5B8171003C1E5B /* Cocoalicious.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B9D0D2D0D57C4730056FC4A /* Cocoalicious.mdimporter */; };
+		6BCBBC860D5B8B74003C1E5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BCBBC820D5B8B74003C1E5B /* InfoPlist.strings */; };
+		6BCBBC870D5B8B74003C1E5B /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BCBBC840D5B8B74003C1E5B /* schema.strings */; };
 		6BCE225D08D2A4E10083FA32 /* version.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B47BF62086345DF00636CB2 /* version.plist */; };
 		6BCE226708D2A5330083FA32 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1107310486CEB800E47090 /* Info.plist */; };
 		6BD81880075AFB740088A2CF /* AppController-AppleScriptExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BD8187D075AFB740088A2CF /* AppController-AppleScriptExtensions.h */; };
@@ -151,6 +159,13 @@
 			remoteGlobalIDString = 6B47BF5A086345A400636CB2;
 			remoteInfo = "Cocoalicious Definition";
 		};
+		6BCBBC000D5B80A1003C1E5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B9D0D2C0D57C4730056FC4A;
+			remoteInfo = "Cocoalicious Spotlight Importer";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -182,6 +197,16 @@
 				6B491D1008D35FEE00B6E3C4 /* Convert Tags to Strings.caction in CopyFiles */,
 				6B557A6008D35590004D4A2A /* Cocoalicious.definition in CopyFiles */,
 				6B557A5F08D3558D004D4A2A /* Convert Posts to URLs.caction in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BCBBC0C0D5B80B5003C1E5B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/Spotlight;
+			dstSubfolderSpec = 1;
+			files = (
+				6BCBBC330D5B8171003C1E5B /* Cocoalicious.mdimporter in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,12 +291,20 @@
 		6B6AA442084A7B0F00FDB683 /* SFHFCircularCounterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFHFCircularCounterCell.m; path = UI/SFHFCircularCounterCell.m; sourceTree = "<group>"; };
 		6B6B69DE082B3C97003DFA07 /* NSDictionary+SFHFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+SFHFUtils.h"; path = "Utilities/NSDictionary+SFHFUtils.h"; sourceTree = "<group>"; };
 		6B6B69DF082B3C97003DFA07 /* NSDictionary+SFHFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+SFHFUtils.m"; path = "Utilities/NSDictionary+SFHFUtils.m"; sourceTree = "<group>"; };
+		6B9D0C900D57BAB50056FC4A /* DCAPIPostMetadataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCAPIPostMetadataManager.h; path = DCAPI/DCAPIPostMetadataManager.h; sourceTree = "<group>"; };
+		6B9D0C910D57BAB50056FC4A /* DCAPIPostMetadataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCAPIPostMetadataManager.m; path = DCAPI/DCAPIPostMetadataManager.m; sourceTree = "<group>"; };
+		6B9D0CCA0D57BC5E0056FC4A /* GetMetadataForFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetMetadataForFile.m; path = Importer/GetMetadataForFile.m; sourceTree = "<group>"; };
+		6B9D0CCC0D57BC660056FC4A /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = Importer/main.c; sourceTree = "<group>"; };
+		6B9D0CCE0D57BC810056FC4A /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = schema.xml; path = Importer/schema.xml; sourceTree = "<group>"; };
+		6B9D0D2D0D57C4730056FC4A /* Cocoalicious.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cocoalicious.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA936C20655EEC400AE7890 /* NSString+SFHFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SFHFUtils.h"; path = "Utilities/NSString+SFHFUtils.h"; sourceTree = "<group>"; };
 		6BA936C30655EEC400AE7890 /* NSString+SFHFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SFHFUtils.m"; path = "Utilities/NSString+SFHFUtils.m"; sourceTree = "<group>"; };
 		6BA939AD065692DC00AE7890 /* metal_column_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metal_column_header.png; path = Art/metal_column_header.png; sourceTree = "<group>"; };
 		6BAB081C06D2FF6A0058BAC1 /* Cocoalicious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocoalicious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB0A8E8074FF64B008FDDCC /* refresh_icon.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = refresh_icon.tif; path = Art/refresh_icon.tif; sourceTree = "<group>"; };
 		6BB2CB300D26EFF000D654F0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		6BCBBC830D5B8B74003C1E5B /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = Importer/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6BCBBC850D5B8B74003C1E5B /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = Importer/English.lproj/schema.strings; sourceTree = "<group>"; };
 		6BD8187D075AFB740088A2CF /* AppController-AppleScriptExtensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "AppController-AppleScriptExtensions.h"; path = "Scripting/AppController-AppleScriptExtensions.h"; sourceTree = "<group>"; };
 		6BD8187E075AFB740088A2CF /* AppController-AppleScriptExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "AppController-AppleScriptExtensions.m"; path = "Scripting/AppController-AppleScriptExtensions.m"; sourceTree = "<group>"; };
 		6BD8187F075AFB740088A2CF /* Cocoalicious.sdef */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.sdef; name = Cocoalicious.sdef; path = Scripting/Cocoalicious.sdef; sourceTree = "<group>"; };
@@ -367,6 +400,7 @@
 				6B47BEFA08633D0800636CB2 /* Convert Posts to URLs.caction */,
 				6B47BF5B086345A400636CB2 /* Cocoalicious.definition */,
 				6B491C9308D35E1700B6E3C4 /* Convert Tags to Strings.caction */,
+				6B9D0D2D0D57C4730056FC4A /* Cocoalicious.mdimporter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -378,6 +412,7 @@
 				6BD8D4C407205239008CA80A /* del.icio.us Client API */,
 				6BD8D4B607205221008CA80A /* Custom UI */,
 				49FE4954073A0868004027E5 /* Search */,
+				6B9D0CC80D57BC450056FC4A /* Spotlight */,
 				3B3F0225073EF17A003AB1C7 /* Scripts */,
 				6BD81875075AFB510088A2CF /* AppleScript Support */,
 				6BD8D4A707205205008CA80A /* Utilities */,
@@ -485,6 +520,18 @@
 			name = "Convert Tags to Strings";
 			sourceTree = "<group>";
 		};
+		6B9D0CC80D57BC450056FC4A /* Spotlight */ = {
+			isa = PBXGroup;
+			children = (
+				6BCBBC820D5B8B74003C1E5B /* InfoPlist.strings */,
+				6BCBBC840D5B8B74003C1E5B /* schema.strings */,
+				6B9D0CCE0D57BC810056FC4A /* schema.xml */,
+				6B9D0CCC0D57BC660056FC4A /* main.c */,
+				6B9D0CCA0D57BC5E0056FC4A /* GetMetadataForFile.m */,
+			);
+			name = Spotlight;
+			sourceTree = "<group>";
+		};
 		6BD81875075AFB510088A2CF /* AppleScript Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +602,8 @@
 		6BD8D4C407205239008CA80A /* del.icio.us Client API */ = {
 			isa = PBXGroup;
 			children = (
+				6B9D0C900D57BAB50056FC4A /* DCAPIPostMetadataManager.h */,
+				6B9D0C910D57BAB50056FC4A /* DCAPIPostMetadataManager.m */,
 				6B1A965E09285ED1000BFD8D /* DCAPICache.h */,
 				6B1A965F09285ED1000BFD8D /* DCAPICache.m */,
 				6BF88AF305C4D79D00D7EDBB /* DCAPIClient.h */,
@@ -614,6 +663,7 @@
 				6BE1ED1708C82BCD003EDABC /* SFHFFaviconCache.h in Headers */,
 				6B557A0208D34E74004D4A2A /* NSArray+IndexSetAdditions.h in Headers */,
 				6B1A966009285ED1000BFD8D /* DCAPICache.h in Headers */,
+				6B9D0C920D57BAB50056FC4A /* DCAPIPostMetadataManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +722,22 @@
 			productReference = 6B491C9308D35E1700B6E3C4 /* Convert Tags to Strings.caction */;
 			productType = "com.apple.product-type.bundle";
 		};
+		6B9D0D2C0D57C4730056FC4A /* Cocoalicious Spotlight Importer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B9D0D320D57C4730056FC4A /* Build configuration list for PBXNativeTarget "Cocoalicious Spotlight Importer" */;
+			buildPhases = (
+				6B9D0D290D57C4730056FC4A /* Resources */,
+				6B9D0D2A0D57C4730056FC4A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cocoalicious Spotlight Importer";
+			productName = "Cocoalicious Spotlight Importer";
+			productReference = 6B9D0D2D0D57C4730056FC4A /* Cocoalicious.mdimporter */;
+			productType = "com.apple.product-type.bundle";
+		};
 		8D1107260486CEB800E47090 /* Cocoal.icio.us */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BBFD3C108AD6B1D005A088A /* Build configuration list for PBXNativeTarget "Cocoal.icio.us" */;
@@ -683,6 +749,7 @@
 				6BD8194B075AFD9C0088A2CF /* ShellScript */,
 				6B47BF91086348A000636CB2 /* CopyFiles */,
 				6B1BC0C109E70606005E3C3B /* CopyFiles */,
+				6BCBBC0C0D5B80B5003C1E5B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -690,6 +757,7 @@
 				6B557A4508D35531004D4A2A /* PBXTargetDependency */,
 				6B557A4708D35536004D4A2A /* PBXTargetDependency */,
 				6B491CBB08D35EA700B6E3C4 /* PBXTargetDependency */,
+				6BCBBC010D5B80A1003C1E5B /* PBXTargetDependency */,
 			);
 			name = Cocoal.icio.us;
 			productInstallPath = "$(HOME)/Applications";
@@ -713,6 +781,7 @@
 				6B47BEF908633D0800636CB2 /* Convert Posts to URLs */,
 				6B47BF5A086345A400636CB2 /* Cocoalicious Definition */,
 				6B491C9208D35E1700B6E3C4 /* Convert Tags to Strings */,
+				6B9D0D2C0D57C4730056FC4A /* Cocoalicious Spotlight Importer */,
 			);
 		};
 /* End PBXProject section */
@@ -739,6 +808,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B9D0D290D57C4730056FC4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BCBB88B0D57D1A7003C1E5B /* schema.xml in Resources */,
+				6BCBBC860D5B8B74003C1E5B /* InfoPlist.strings in Resources */,
+				6BCBBC870D5B8B74003C1E5B /* schema.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,6 +868,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6B9D0D2A0D57C4730056FC4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B9D0E580D57CEE10056FC4A /* main.c in Sources */,
+				6B9D0E5B0D57CF0D0056FC4A /* GetMetadataForFile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -825,6 +913,7 @@
 				6BE1ED1808C82BD0003EDABC /* SFHFFaviconCache.m in Sources */,
 				6B557A0308D34E74004D4A2A /* NSArray+IndexSetAdditions.m in Sources */,
 				6B1A966109285ED1000BFD8D /* DCAPICache.m in Sources */,
+				6B9D0C930D57BAB50056FC4A /* DCAPIPostMetadataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +934,11 @@
 			isa = PBXTargetDependency;
 			target = 6B47BF5A086345A400636CB2 /* Cocoalicious Definition */;
 			targetProxy = 6B557A4608D35536004D4A2A /* PBXContainerItemProxy */;
+		};
+		6BCBBC010D5B80A1003C1E5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B9D0D2C0D57C4730056FC4A /* Cocoalicious Spotlight Importer */;
+			targetProxy = 6BCBBC000D5B80A1003C1E5B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -872,6 +966,22 @@
 			);
 			name = Localizable.strings;
 			path = Scripting/Automator/Definition/English.lproj;
+			sourceTree = "<group>";
+		};
+		6BCBBC820D5B8B74003C1E5B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BCBBC830D5B8B74003C1E5B /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6BCBBC840D5B8B74003C1E5B /* schema.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BCBBC850D5B8B74003C1E5B /* English */,
+			);
+			name = schema.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -963,6 +1073,96 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = caction;
+			};
+			name = Default;
+		};
+		6B9D0D2F0D57C4730056FC4A /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Cocoalicious Spotlight Importer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Cocoalicious Spotlight Importer";
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		6B9D0D300D57C4730056FC4A /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = Importer/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					CoreServices,
+				);
+				PREBINDING = NO;
+				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
+				PRODUCT_NAME = Cocoalicious;
+				WRAPPER_EXTENSION = mdimporter;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		6B9D0D310D57C4730056FC4A /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Cocoalicious Spotlight Importer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Cocoalicious Spotlight Importer";
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
 			};
 			name = Default;
 		};
@@ -1325,6 +1525,16 @@
 				6B491C9A08D35E1700B6E3C4 /* Development */,
 				6B491C9B08D35E1700B6E3C4 /* Deployment */,
 				6B491C9C08D35E1700B6E3C4 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		6B9D0D320D57C4730056FC4A /* Build configuration list for PBXNativeTarget "Cocoalicious Spotlight Importer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B9D0D2F0D57C4730056FC4A /* Development */,
+				6B9D0D300D57C4730056FC4A /* Deployment */,
+				6B9D0D310D57C4730056FC4A /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;

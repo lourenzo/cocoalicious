@@ -5,7 +5,28 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDocumentTypes</key>
-	<array/>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>cocoaliciouspost</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>deliciousclient</string>
+			<key>CFBundleTypeName</key>
+			<string>Cocoalicious Post</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.scifihifi.Cocoalicious.cocoaliciouspost</string>
+			</array>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>XML</string>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>Cocoalicious</string>
 	<key>CFBundleIconFile</key>

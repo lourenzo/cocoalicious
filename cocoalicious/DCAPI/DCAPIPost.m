@@ -394,7 +394,7 @@ static NSString *kPOST_DICTIONARY_IS_PRIVATE_KEY = @"private";
          * This also makes this test fairly safe if we get thrown objects
          * which aren't what we're expecting.
          */
-        if (![[anObject description] isEqualToString: [URL description]]) {
+        if (![[[anObject URL] description] isEqualToString: [URL description]]) {
             return NO;
         }
         return YES;

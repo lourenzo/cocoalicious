@@ -29,6 +29,7 @@
 #import "SFHFCornerView.h"
 #import "EBIconAndTextCell.h"
 #import "SFHFFaviconCache.h"
+#import "DCAPIPostMetadataManager.h"
 #import "defines.h"
 #import "DCTypes.h"
 
@@ -100,6 +101,12 @@
 	NSTimer *autocompleteTimer;
 	
 	BOOL finishedLaunching;
+
+	DCAPIPostMetadataManager *metadataManager;
+
+	BOOL postSelectionPending;
+	NSString * postToSelectURL;
+	NSDictionary * postToSelectInfo;
 	
 #ifdef AWOOSTER_CHANGES
     FullTextIndex *textIndex;
@@ -112,6 +119,8 @@
 - (DCAPIClient *) client;
 - (void) setCache: (DCAPICache *) newCache;
 - (DCAPICache *) cache;
+- (void) setMetadataManager: (DCAPIPostMetadataManager *) newMetadataManager;
+- (DCAPIPostMetadataManager *) metadataManager;
 - (void) login;
 - (BOOL) loginWithUsername: (NSString *) username password: (NSString *) password APIURL: (NSURL *) APIURL error: (NSError **) error;
 - (IBAction) refresh: (id) sender;
@@ -156,6 +165,11 @@
 - (void) resortTags;
 - (void) renameTag: (NSString *) originalName to: (NSString *) newName withUpload: (BOOL) upload;
 
+- (NSString *) postToSelectURL;
+- (NSDictionary *) postToSelectInfo;
+- (void) setPostToSelectURL: (NSString *) newPostToSelectURL;
+- (void) setPostToSelectInfo: (NSDictionary *) newPostToSelectInfo;
+
 /* UI setup */
 - (void) setupTaglist;
 - (void) setupPostlist;
@@ -193,5 +207,10 @@
 - (void) previewSelectedLinks;
 - (void) performAsyncAddOfPost: (DCAPIPost *) newPost;
 - (void) performAsyncDownloadOfFaviconForPost: (DCAPIPost *) newPost;
+
+- (BOOL) selectPost: (NSString *) postURL withInfo: (NSDictionary *) postInfo;
+
+/* Notifications */
+- (void) checkForPostToSelect: (NSNotification *)notification;
 
 @end
