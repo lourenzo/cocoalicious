@@ -27,6 +27,26 @@
 			<string>XML</string>
 		</dict>
 	</array>
+	<key>UTExportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeConformsTo</key>
+            <array>
+                <string>public.data</string>
+            </array>
+            <key>UTTypeDescription</key>
+            <string>Cocoalicious Post</string>
+            <key>UTTypeIdentifier</key>
+            <string>com.scifihifi.Cocoalicious.cocoaliciouspost</string>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array>
+                    <string>cocoaliciouspost</string>
+                </array>
+            </dict>
+        </dict>
+    </array>
 	<key>CFBundleExecutable</key>
 	<string>Cocoalicious</string>
 	<key>CFBundleIconFile</key>
