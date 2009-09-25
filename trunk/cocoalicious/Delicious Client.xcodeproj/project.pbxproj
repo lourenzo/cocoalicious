@@ -113,7 +113,6 @@
 		6BCBBC860D5B8B74003C1E5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BCBBC820D5B8B74003C1E5B /* InfoPlist.strings */; };
 		6BCBBC870D5B8B74003C1E5B /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BCBBC840D5B8B74003C1E5B /* schema.strings */; };
 		6BCE225D08D2A4E10083FA32 /* version.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B47BF62086345DF00636CB2 /* version.plist */; };
-		6BCE226708D2A5330083FA32 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1107310486CEB800E47090 /* Info.plist */; };
 		6BD81880075AFB740088A2CF /* AppController-AppleScriptExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BD8187D075AFB740088A2CF /* AppController-AppleScriptExtensions.h */; };
 		6BD81881075AFB740088A2CF /* AppController-AppleScriptExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8187E075AFB740088A2CF /* AppController-AppleScriptExtensions.m */; };
 		6BD818EE075AFCE60088A2CF /* DCAPIPost-AppleScriptExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BD818EA075AFCE50088A2CF /* DCAPIPost-AppleScriptExtensions.h */; };
@@ -261,15 +260,15 @@
 		6B45F6C607B4934D0007FA1E /* SFHFTextView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = SFHFTextView.m; path = UI/SFHFTextView.m; sourceTree = "<group>"; };
 		6B47BEFA08633D0800636CB2 /* Convert Posts to URLs.caction */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Convert Posts to URLs.caction"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B47BF0908633DF600636CB2 /* main.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = main.applescript; path = "Scripting/Automator/Convert Posts To URLs/main.applescript"; sourceTree = "<group>"; };
-		6B47BF0C08633E0400636CB2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = Info.plist; path = "Scripting/Automator/Convert Posts To URLs/Info.plist"; sourceTree = "<group>"; };
+		6B47BF0C08633E0400636CB2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Scripting/Automator/Convert Posts To URLs/Info.plist"; sourceTree = "<group>"; };
 		6B47BF1D08633EB700636CB2 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = /System/Library/Frameworks/Automator.framework; sourceTree = "<absolute>"; };
 		6B47BF5B086345A400636CB2 /* Cocoalicious.definition */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cocoalicious.definition; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B47BF5D086345C500636CB2 /* definition.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = definition.plist; path = Scripting/Automator/Definition/definition.plist; sourceTree = "<group>"; };
+		6B47BF5D086345C500636CB2 /* definition.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = definition.plist; path = Scripting/Automator/Definition/definition.plist; sourceTree = "<group>"; };
 		6B47BF60086345CF00636CB2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		6B47BF62086345DF00636CB2 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = version.plist; path = Scripting/Automator/Definition/version.plist; sourceTree = "<group>"; };
-		6B47BF64086345F100636CB2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = Info.plist; path = Scripting/Automator/Definition/Info.plist; sourceTree = "<group>"; };
+		6B47BF62086345DF00636CB2 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = version.plist; path = Scripting/Automator/Definition/version.plist; sourceTree = "<group>"; };
+		6B47BF64086345F100636CB2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = Info.plist; path = Scripting/Automator/Definition/Info.plist; sourceTree = "<group>"; };
 		6B491C9308D35E1700B6E3C4 /* Convert Tags to Strings.caction */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Convert Tags to Strings.caction"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B491CA008D35E5600B6E3C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = Info.plist; path = "Scripting/Automator/Convert Tags to Strings/Info.plist"; sourceTree = "<group>"; };
+		6B491CA008D35E5600B6E3C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Scripting/Automator/Convert Tags to Strings/Info.plist"; sourceTree = "<group>"; };
 		6B491CA208D35E7500B6E3C4 /* main.applescript */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.applescript; name = main.applescript; path = "Scripting/Automator/Convert Tags to Strings/main.applescript"; sourceTree = "<group>"; };
 		6B557A0008D34E74004D4A2A /* NSArray+IndexSetAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+IndexSetAdditions.h"; path = "Utilities/NSArray+IndexSetAdditions.h"; sourceTree = "<group>"; };
 		6B557A0108D34E74004D4A2A /* NSArray+IndexSetAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+IndexSetAdditions.m"; path = "Utilities/NSArray+IndexSetAdditions.m"; sourceTree = "<group>"; };
@@ -838,7 +837,6 @@
 				6BF009AE077B05B30036723E /* toggle_web_preview_icon.tif in Resources */,
 				6B0896C80838FCEF0057A654 /* star.tif in Resources */,
 				6B0896C90838FCEF0057A654 /* star_highlighted.tif in Resources */,
-				6BCE226708D2A5330083FA32 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -993,12 +991,12 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "Scripting/Automator/Convert Tags to Strings/Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				LIBRARY_STYLE = STATIC;
-				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1023,12 +1021,12 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "Scripting/Automator/Convert Tags to Strings/Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				LIBRARY_STYLE = STATIC;
-				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1052,12 +1050,12 @@
 			buildSettings = {
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "Scripting/Automator/Convert Tags to Strings/Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				LIBRARY_STYLE = STATIC;
-				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1185,7 +1183,6 @@
 				INFOPLIST_FILE = "Scripting/Automator/Convert Posts To URLs/Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Automator";
 				LIBRARY_STYLE = STATIC;
-				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1288,7 +1285,6 @@
 				INFOPLIST_FILE = Scripting/Automator/Definition/Info.plist;
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Automator";
 				LIBRARY_STYLE = BUNDLE;
-				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1399,7 +1395,6 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Cocoalicious;
@@ -1489,8 +1484,9 @@
 					i386,
 				);
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				VALID_ARCHS = "i386 ppc";
 			};
 			name = Development;
 		};
@@ -1502,8 +1498,9 @@
 					i386,
 				);
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				VALID_ARCHS = "i386 ppc";
 			};
 			name = Deployment;
 		};
@@ -1514,8 +1511,9 @@
 					ppc,
 					i386,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				VALID_ARCHS = "i386 ppc";
 			};
 			name = Default;
 		};

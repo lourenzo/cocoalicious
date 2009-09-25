@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
@@ -28,25 +28,25 @@
 		</dict>
 	</array>
 	<key>UTExportedTypeDeclarations</key>
-    <array>
-        <dict>
-            <key>UTTypeConformsTo</key>
-            <array>
-                <string>public.data</string>
-            </array>
-            <key>UTTypeDescription</key>
-            <string>Cocoalicious Post</string>
-            <key>UTTypeIdentifier</key>
-            <string>com.scifihifi.Cocoalicious.cocoaliciouspost</string>
-            <key>UTTypeTagSpecification</key>
-            <dict>
-                <key>public.filename-extension</key>
-                <array>
-                    <string>cocoaliciouspost</string>
-                </array>
-            </dict>
-        </dict>
-    </array>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Cocoalicious Post</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.scifihifi.Cocoalicious.cocoaliciouspost</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>cocoaliciouspost</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>Cocoalicious</string>
 	<key>CFBundleIconFile</key>
@@ -60,7 +60,7 @@
 	<key>CFBundleSignature</key>
 	<string>Lish</string>
 	<key>CFBundleVersion</key>
-	<string>45b</string>
+	<string>1.0b47</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
@@ -71,10 +71,10 @@
 	<string>http://www.scifihifi.com/cocoalicious/appcast.rss</string>
 	<key>CFBundleURLTypes</key>
 	<array>
-    <dict>
-        <key>CFBundleURLName</key>
-        <string>Del.icio.us web site URL to bookmark</string>
-        <key>CFBundleURLSchemes</key>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>Del.icio.us web site URL to bookmark</string>
+			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>delicious</string>
 			</array>
@@ -86,26 +86,25 @@
 	<array>
 		<dict>
 			<key>NSMenuItem</key>
-				<dict>
-					<key>default</key>
-					<string>Post URL via Cocoalicious</string>
-				</dict>
+			<dict>
+				<key>default</key>
+				<string>Post URL via Cocoalicious</string>
+			</dict>
 			<key>NSMessage</key>
-				<string>postNewLinkWithPasteboard</string>
+			<string>postNewLinkWithPasteboard</string>
 			<key>NSPortName</key>
-				<string>Cocoalicious</string>
+			<string>Cocoalicious</string>
 			<key>NSSendTypes</key>
-				<array>
-					<string>NSURLPboardType</string>
-					<string>NSStringPboardType</string>
-				</array>
+			<array>
+				<string>NSURLPboardType</string>
+				<string>NSStringPboardType</string>
+			</array>
 			<key>NSKeyEquivalent</key>
 			<dict>
-			<key>default</key>
+				<key>default</key>
 				<string>^</string>
 			</dict>
 		</dict>
 	</array>
-
 </dict>
 </plist>
