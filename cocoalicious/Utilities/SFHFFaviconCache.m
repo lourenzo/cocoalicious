@@ -140,7 +140,7 @@ static SFHFFaviconCache *sharedFaviconCache = nil;
 	[req setValue:kUSER_AGENT forHTTPHeaderField:@"User-Agent"];
 			
 	NSURLResponse * resp;
-	NSError * error;
+	NSError * error = nil;
 
 	NSData *returnData = [NSURLConnection sendSynchronousRequest: req returningResponse: &resp error: &error];
 			

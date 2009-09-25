@@ -1297,7 +1297,7 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
     NSString *user = [values valueForKey: kUSERNAME_DEFAULTS_KEY];
     NSString *apiURLString = [values valueForKey: kAPI_URL_DEFAULTS_KEY];
 	NSURL *apiURL = [NSURL URLWithString: apiURLString];
-	NSError *loginError;
+	NSError *loginError = nil;
 
 	BOOL autologin = [[values valueForKey: kAUTOLOGIN_DEFAULTS_KEY] boolValue];
 	[loginProperties setObject: [NSNumber numberWithBool: autologin] forKey: @"autologin"];
@@ -1329,7 +1329,7 @@ apiURL domain: kDEFAULT_SECURITY_DOMAIN];
 	NSString *username = [loginProperties objectForKey: @"username"];
 	NSString *password = [loginProperties objectForKey: @"password"];
 	BOOL autologin = [[loginProperties objectForKey: @"autologin"] boolValue];
-	NSError *loginError;
+	NSError *loginError = nil;
 
 	if (!username || !password) {
 		[loginErrorText setStringValue: ERR_LOGIN_NO_CREDENTIALS_SPECIFIED];

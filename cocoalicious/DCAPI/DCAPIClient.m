@@ -108,7 +108,7 @@ static NSString *kLEGAL_CHARACTERS_TO_BE_ESCAPED = @"@?&/;+";
 
 - (NSArray *) requestTagsFilteredByDate: (NSDate *) date {
     NSMutableString *getTagsURIString;
-	NSError *error;
+	NSError *error = nil;
     
     [self constructURIString: &getTagsURIString forFunction: kGET_TAGS_RELATIVE_URI];
 
@@ -135,7 +135,7 @@ static NSString *kLEGAL_CHARACTERS_TO_BE_ESCAPED = @"@?&/;+";
 
 - (NSArray *) requestDatesFilteredByTag: (DCAPITag *) tag {
     NSMutableString *getDatesURIString;
-	NSError *error;
+	NSError *error = nil;
     
     [self constructURIString: &getDatesURIString forFunction: kGET_DATES_RELATIVE_URI];
 
@@ -164,7 +164,7 @@ static NSString *kLEGAL_CHARACTERS_TO_BE_ESCAPED = @"@?&/;+";
 
 - (NSArray *) requestPostsFilteredByTag: (DCAPITag *) tag count: (NSNumber *) count {
     NSMutableString *getPostsURIString;
-    NSError *error;
+    NSError *error = nil;
 	
 	if (count || tag) {
 		[self constructURIString: &getPostsURIString forFunction: kGET_RECENT_POSTS_RELATIVE_URI];
@@ -220,7 +220,7 @@ static NSString *kLEGAL_CHARACTERS_TO_BE_ESCAPED = @"@?&/;+";
 
 - (NSArray *) requestPostsForDate: (NSDate *) date tag: (DCAPITag *) tag {
     NSMutableString *getPostsURIString;
-    NSError *error;
+    NSError *error = nil;
 	
     [self constructURIString: &getPostsURIString forFunction: kGET_POSTS_RELATIVE_URI];
     
@@ -283,7 +283,7 @@ static NSString *kLEGAL_CHARACTERS_TO_BE_ESCAPED = @"@?&/;+";
 - (void) addPost: (DCAPIPost *) newPost {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSMutableString *addPostURIString;
-	NSError *error;
+	NSError *error = nil;
     
     [self constructURIString: &addPostURIString forFunction: kADD_POST_RELATIVE_URI];
     
@@ -338,7 +338,7 @@ static NSString *kLEGAL_CHARACTERS_TO_BE_ESCAPED = @"@?&/;+";
 
 - (void) deletePostWithURL: (NSURL *) url {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	NSError *error;
+	NSError *error = nil;
 	
 	NSMutableString *addPostURIString;
 
@@ -364,7 +364,7 @@ static NSString *kLEGAL_CHARACTERS_TO_BE_ESCAPED = @"@?&/;+";
 
 - (void) renameTag: (NSString *) oldName to: (NSString *) newName {
     NSMutableString *renameTagURIString;
-	NSError *error;
+	NSError *error = nil;
     
 	if (!oldName || !newName) {
 		return;
