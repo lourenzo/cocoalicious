@@ -1,0 +1,1 @@
+A Cocoa del.icio.us client for Mac OS X.
